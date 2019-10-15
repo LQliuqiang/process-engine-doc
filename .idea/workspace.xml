@@ -2,129 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4ce90dc-bc53-43a9-8b98-edb22ddafdb8" name="Default Changelist" comment="">
-      <change afterPath="D:/androidProject/MyRobotApp/app/src/main/java/beacon/myrobotapp/InitApp.java" afterDir="false" />
-      <change afterPath="D:/studyJava/lq-study-springboot/src/main/java/lq/study/springboot/Application.java" afterDir="false" />
-      <change afterPath="D:/studyJava/lq-study-springboot/src/test/java/lq/study/springboot/ApplicationTests.java" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/BeaconCoreproActivemqServer.iml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/pom.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/java/cn/beacon/bean/CoreProGwTypeBean.java" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/java/cn/beacon/bean/ProducerMessageBean.java" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/java/cn/beacon/mapper/CoreProGwTypeMapper.java" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/java/cn/beacon/rabbit/RmqConsumer.java" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/java/cn/beacon/service/CoreProGwTypeService.java" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/resources/conf/applicationContext.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/resources/conf/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/resources/conf/mybatis.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/resources/db.properties" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/resources/mapper/CoreProGwTypeMapper.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/cn/beacon/bean/CoreProGwTypeBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/cn/beacon/bean/ProducerMessageBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/cn/beacon/mapper/CoreProGwTypeMapper.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/cn/beacon/rabbit/RmqConsumer.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/cn/beacon/service/CoreProGwTypeService.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/conf/applicationContext.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/conf/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/conf/mybatis.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/db.properties" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/classes/mapper/CoreProGwTypeMapper.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/amqp-client-5.0.0.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/aspectjweaver-1.8.9.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/c3p0-0.9.5.1.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/commons-codec-1.9.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/gson-2.8.2.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/http-client-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/httpclient-4.5.3.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/httpcore-4.4.6.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/jackson-core-2.9.2.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/jackson-databind-2.9.2.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/mchange-commons-java-0.2.10.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/mybatis-3.4.6.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/mybatis-spring-1.3.2.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/mysql-connector-java-5.1.39.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-buffer-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-codec-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-codec-http-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-codec-socks-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-common-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-handler-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-handler-proxy-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-resolver-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-transport-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-transport-native-epoll-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/netty-transport-native-unix-common-4.1.16.Final.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/reactive-streams-1.0.1.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/reactor-core-3.1.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/reactor-netty-0.7.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-amqp-2.0.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-aop-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-aspects-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-beans-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-context-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-core-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-expression-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-jdbc-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-messaging-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-rabbit-2.0.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-retry-1.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-tx-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-webflux-5.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/BeaconCoreproActivemqServer/index.jsp" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/cn/beacon/bean/CoreProGwTypeBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/cn/beacon/bean/ProducerMessageBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/cn/beacon/mapper/CoreProGwTypeMapper.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/cn/beacon/rabbit/RmqConsumer.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/cn/beacon/service/CoreProGwTypeService.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/conf/applicationContext.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/conf/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/conf/mybatis.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/db.properties" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconCoreproActivemqServer/target/classes/mapper/CoreProGwTypeMapper.xml" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/.idea/workspace.xml" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$1$1.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$1.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$1.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$2.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$2.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$3.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$3.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$4.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$4.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$5.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp$5.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/BeaconHttp.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/achieve/Is2FileTask.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/achieve/Response$1.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/achieve/Response.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/http/achieve/Response.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/json/TestJson.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/json/UserBean$InfoBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/json/UserBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/INetService.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$1.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$2.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$3$1.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$3.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$4$1.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$4.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main$5.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main.class" beforeDir="false" afterPath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/Main.class" afterDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/User.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/Encrypt.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/FamilyOrgBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/OrgId.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/RealOrgId$LanguageBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/RealOrgId$OrgBean.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/RealOrgId.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/Token.class" beforeDir="false" />
-      <change beforePath="D:/Users/Administrator/IdeaProjects/BeaconHttp/out/production/BeaconHttp/com/beacon/test/ac2/UTC2Date.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProcessDemo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessDemo.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -141,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/ProcessDoc.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="n#table#0;n#td#2;n#tr#4;n#tbody#0;n#table#0;n#li#3;n#ol#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#table#0;n#li#4;n#ol#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -166,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/ProcessDesc.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2100">
-              <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -174,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProcessDemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="175" column="33" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="33" />
+            <state relative-caret-position="1843">
+              <caret line="570" column="22" lean-forward="true" selection-start-line="570" selection-start-column="22" selection-end-line="570" selection-end-column="22" />
               <folding>
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -192,10 +70,7 @@
         <entry file="file://$PROJECT_DIR$/lib/jquery.toast.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-              <folding>
-                <element signature="e#36#43#1" expanded="true" />
-              </folding>
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -208,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/loading.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-550">
+            <state relative-caret-position="275">
               <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
             </state>
           </provider>
@@ -230,7 +105,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="D:/" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -284,6 +159,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -323,11 +199,12 @@
       <updated>1571020611557</updated>
       <workItem from="1571020613988" duration="18606000" />
       <workItem from="1571098609543" duration="18623000" />
+      <workItem from="1571128167714" duration="1289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37229000" />
+    <option name="totallyTimeSpent" value="38518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -372,40 +249,10 @@
     <entry file="file://$PROJECT_DIR$/lib/jquery-3.3.1.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/loading.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/angular-delegates.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jquery.toast.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jquery.toast.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="e#36#43#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProcessDesc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProcessDoc.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="n#table#0;n#td#2;n#tr#4;n#tbody#0;n#table#0;n#li#3;n#ol#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#table#0;n#li#4;n#ol#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -425,10 +272,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProcessDesc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery.toast.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery.toast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/angular-delegates.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/loading.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ProcessDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="175" column="33" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="33" />
+        <state relative-caret-position="1843">
+          <caret line="570" column="22" lean-forward="true" selection-start-line="570" selection-start-column="22" selection-end-line="570" selection-end-column="22" />
           <folding>
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
           </folding>

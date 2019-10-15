@@ -29,8 +29,8 @@
 <!--主内容-->
 <h1 class="h1 text-center">流程引擎接口使用Dome</h1>
 
-<div class="form-group">
-    <label>配置流程引擎服务的基本链接地址</label>
+<div class="form-group mt">
+    <label>配置流程引擎服务的基本链接地址(默认http://localhost:8080)</label>
     <input type="text" class="form-control" ng-model="processEngineServiceUrl" placeholder="如:http://localhost:8080">
 </div>
 
@@ -173,7 +173,7 @@
             </tr>
             </tbody>
         </table>
-        <img src="{{processImgUrl}}">
+        <img src="{{processImgUrl}}" alt="流程图">
     </div>
 
 </div>
@@ -426,7 +426,6 @@
                 }
                 return "";
             };
-
             //监听流程引擎服务的基本地址
             let rootUrl = "http://localhost:8080";
             $scope.$watch("processEngineServiceUrl",function (n, o) {
@@ -435,12 +434,10 @@
                 }
             });
 
-
             //1.部署工作流模板
             $scope.deployProcessModelJson = deployProcessModelJson;
             $scope.deployProcessModelResult = "部署工作流模板结果";
             $scope.deployProcessModelClick = function () {
-                console.log("rootUrl",rootUrl);
                 $scope.progressShowFlag = true;
                 $http({
                     method: "POST",
@@ -505,7 +502,7 @@
                         $scope.progressShowFlag = false;
                         let data = response.data;
                         if (data.status === 200) {
-                            tipService.successTip("success");
+                            // tipService.successTip("success");
                             $scope.processList = data.data;
                         } else {
                             tipService.errorTip(data.errorInfo);
@@ -528,19 +525,14 @@
                         timeout: 15000
                     }).then(function (response) {
                         $scope.progressShowFlag = false;
-                        let data = response.data;
-                        if (data.status === 200) {
-                            tipService.successTip("删除成功");
-                            $scope.processList.splice(index, 1)
-                        } else {
-                            tipService.errorTip(data.errorInfo);
-                        }
+                        tipService.successTip("删除成功");
+                        $scope.processList.splice(index, 1);
                     }, function (error) {
                         $scope.progressShowFlag = false;
                         tipService.errorTip("网络链接异常");
                     });
                 } else {
-                    $scope.processImgUrl = ROOT_URL + "/process/processDiagram?processInstanceId=" + process.id + "&" + Math.random();
+                    $scope.processImgUrl = rootUrl + "/process/processDiagram?processInstanceId=" + process.id + "&" + Math.random();
                 }
             };
 
@@ -556,7 +548,7 @@
                         $scope.progressShowFlag = false;
                         let data = response.data;
                         if (data.status === 200) {
-                            tipService.successTip("success");
+                            // tipService.successTip("success");
                             $scope.taskList = data.data;
                         } else {
                             tipService.errorTip(data.errorInfo);
