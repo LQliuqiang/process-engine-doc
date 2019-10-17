@@ -24,8 +24,8 @@
         <ul class="nav navbar-nav">
             <li ui-sref="processDesc" ng-class="{'active':liActiveFlag===0}" ng-click="toolbarClick(0)"><a
                     href="#">描述</a></li>
-            <li ui-sref="processApiDoc" ng-class="{'active':liActiveFlag===1}" ng-click="toolbarClick(1)"><a href="#">接口文档</a>
-            </li>
+            <li ui-sref="processApiDoc" ng-class="{'active':liActiveFlag===1}" ng-click="toolbarClick(1)"><a
+                    href="#">API文档</a></li>
             <li ui-sref="processDeployDoc" ng-class="{'active':liActiveFlag===2}" ng-click="toolbarClick(2)"><a
                     href="#">部署文档</a></li>
             <li ui-sref="processDemo" ng-class="{'active':liActiveFlag===3}" ng-click="toolbarClick(3)"><a href="#">测试Demo</a>
@@ -65,11 +65,11 @@
             $stateProvider
                 .state('processDesc', {
                     url: '/process-desc',
-                    templateUrl: 'html/processDesc.html'
+                    templateUrl: 'html/ProcessDesc.html'
                 })
                 .state('processApiDoc', {
                     url: '/process-api-doc',
-                    templateUrl: 'html/processApiDoc.html'
+                    templateUrl: 'html/ProcessApiDoc.html'
                 })
                 .state('processDeployDoc', {
                     url: '/process-deploy-doc',
