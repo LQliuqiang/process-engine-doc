@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程引擎使用Dome</title>
+</head>
+<body>
+
+<div class="form-group">
+    <label>配置流程引擎服务的基本链接地址(默认http://localhost:8080)</label>
+    <input type="text" class="form-control" ng-model="processEngineServiceUrl" placeholder="如:http://localhost:8080">
+</div>
+
+<!--demo流程图-->
+<div class="mt">
+    <h3 class="h3">Demo流程示意图
+        <small>(结合预备用户表，第一步，第二步，第三步)</small>
+    </h3>
+    <img src="img/demo.PNG" width="880" height="425">
+</div>
+
+<!--预备用户表-->
+<div class="mt">
+    <h3 class="h3">预备用户表</h3>
+    <table class="table table-striped table-bordered table-hover ">
+        <thead>
+        <tr>
+            <th>用户编号
+                <small>(userId)</small>
+            </th>
+            <th>用户名
+                <small>(username)</small>
+            </th>
+            <th>级别
+                <small>(level)</small>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in userList">
+            <td>{{user.userId}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.level}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!--1.部署工作流模板-->
+<div class="mt">
+    <h3 class="h3"><strong>第一步:</strong>部署工作流模板</h3>
+    <p><strong class="text-danger">工作流模板json编写核心: </strong>先定义 userTask(用户任务)节点,Event(事件)节点,Gateway(网关)节点,
+        然后使用sequenceFlow(顺序流)根据流程的业务逻辑去链接这三种定义好了的节点(节点id)，使之成为一个想要的工作流。</p>
+    <pre><code ng-bind="deployProcessModelJson"></code></pre>
+    <button class="btn bg-primary" ng-click="deployProcessModelClick()">部署工作流模板</button>
+</div>
+
+<!--2.配置工作流-->
+<div class="mt">
+    <h3 class="h3"><strong>第二步:</strong>配置工作流
+        <small>(配置单据)</small>
+    </h3>
+    <div class="row">
+        <div class="form-group col-sm-3">
+            <label>员工(提交单据)</label>
+            <select class="form-control" ng-model="employeeId">
+                <option ng-repeat="user in userList" ng-if="user.level=='员工'">{{user.userId}}</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-3">
+            <label>签核经理1</label>
+            <select class="form-control" ng-model="director1Id">
+                <option ng-repeat="user in userList" ng-if="user.level=='经理'">{{user.userId}}</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-3">
+            <label>签核经理2</label>
+            <select class="form-control" ng-model="director2Id">
+                <option ng-repeat="user in userList" ng-if="user.level=='经理'">{{user.userId}}</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-3">
+            <label>签核老板</label>
+            <select class="form-control" ng-model="bossId">
+                <option ng-repeat="user in userList" ng-if="user.level=='老板'">{{user.userId}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<!--3.部署工作流-->
+<div class="mt">
+    <h3 class="h3"><strong>第三步:</strong>部署工作流(用户提交单据)
+        <small>(根据工作流模板部署工作流)</small>
+    </h3>
+    <pre><code id="deployProcessJsonId">{
+    "processDefinitionKey": "ExpenseId",
+    "processInstanceName": "{{userId2Username()}}出差报销流程",
+    "userId": "{{employeeId}}",
+    "map": {
+        "bossId": "{{bossId}}",
+        "director1Id": "{{director1Id}}",
+        "director2Id": "{{director2Id}}",
+        "documentation": "{{userId2Username()}}此次去xxx地出差共花了666666...元...",
+        "employeeId": "{{employeeId}}"
+    }
+}</code></pre>
+    <button class="btn bg-primary" ng-click="deployProcessClick()">部署工作流</button>
+</div>
+
+
+<!--4.查询用户工作流列表-->
+<div class="mt">
+    <h3 class="h3"><strong>第四步:</strong>查询用户工作流列表</h3>
+    <div class="row">
+        <div class="form-group col-sm-3">
+            <label>选择查询的用户</label>
+            <select class="form-control" ng-model="selectProcessEmployeeId">
+                <option ng-repeat="user in userList">{{user.userId}}</option>
+            </select>
+        </div>
+    </div>
+    <div ng-show="processList.length>0">
+        <table class="table table-striped table-bordered table-hover ">
+            <thead>
+            <tr>
+                <th>开启时间</th>
+                <th>类型</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody ngd-click="processItemDelegateClick($event,process,$index)" selector=".process_item">
+            <tr ng-repeat="process in processList track by $index">
+                <td>{{process.startTime}}</td>
+                <td>{{process.processTypeName}}</td>
+                <td>{{process.name}}</td>
+                <td>
+                    <button class="btn btn-danger process_item">删除</button>
+                    <button class="btn btn-primary process_item">查看</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <img src="{{processImgUrl}}" alt="流程图">
+    </div>
+
+</div>
+
+
+<!--5.查询用户任务-->
+<div class="mt">
+    <h3 class="h3"><strong>第五步:</strong>查询用户任务列表</h3>
+    <div class="row">
+        <div class="form-group col-sm-3">
+            <label>选择查询的用户</label>
+            <select class="form-control" ng-model="selectTaskEmployeeId">
+                <option ng-repeat="user in userList">{{user.userId}}</option>
+            </select>
+        </div>
+    </div>
+    <table ng-show="taskList.length>0" class="table table-striped table-bordered table-hover ">
+        <thead>
+        <tr>
+            <th>开启时间</th>
+            <th>任务名称</th>
+            <th>工作流名称</th>
+            <th>任务描述</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody ngd-click="taskItemDelegateClick(task,$index)" selector=".task_item">
+        <tr ng-repeat="task in taskList track by $index">
+            <td>{{task.processInstanceEntity.startTime}}</td>
+            <td>{{task.taskName}}</td>
+            <td>{{task.processInstanceEntity.name}}</td>
+            <td>{{task.documentation}}</td>
+            <td>
+                <button class="btn btn-primary task_item">签核</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

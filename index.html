@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="indexApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>流程引擎Service</title>
+    <link rel="stylesheet" href="lib/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/loading.css">
+    <link rel="stylesheet" href="lib/jquery.toast.css">
+    <style>
+        .mt {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body ng-controller="indexCtrl" class="container">
+
+<div class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">流程引擎服务</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li ui-sref="processDesc" ng-class="{'active':liActiveFlag===0}" ng-click="toolbarClick(0)"><a
+                    href="#">描述</a></li>
+            <li ui-sref="processApiDoc" ng-class="{'active':liActiveFlag===1}" ng-click="toolbarClick(1)"><a href="#">接口文档</a>
+            </li>
+            <li ui-sref="processDeployDoc" ng-class="{'active':liActiveFlag===2}" ng-click="toolbarClick(2)"><a
+                    href="#">部署文档</a></li>
+            <li ui-sref="processDemo" ng-class="{'active':liActiveFlag===3}" ng-click="toolbarClick(3)"><a href="#">测试Demo</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div ui-view=""></div>
+
+
+<!--    进度条-->
+<div id="loading" ng-show="progressShowFlag">
+    <div></div>
+    <div>
+        <div class="loader loader-3">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="lib/jquery.toast.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.js"></script>
+<script src="lib/angular-delegates.js"></script>
+<script src="lib/InitData.js"></script>
+<script>
+
+    angular.module("indexApp", ['ui.router', 'DelegateEvents'])
+        .config(['$stateProvider', function ($stateProvider) {
+            $stateProvider
+                .state('processDesc', {
+                    url: '/process-desc',
+                    templateUrl: 'html/processDesc.html'
+                })
+                .state('processApiDoc', {
+                    url: '/process-api-doc',
+                    templateUrl: 'html/processApiDoc.html'
+                })
+                .state('processDeployDoc', {
+                    url: '/process-deploy-doc',
+                    templateUrl: 'html/ProcessDeployDoc.html'
+                })
+                .state('processDemo', {
+                    url: '/process-demo',
+                    templateUrl: "html/ProcessDemo.html",
+                    controller: "processCtrl"
+                })
+        }])
+        .service("tipService", function () {
+            //成功
+            this.successTip = function (msg) {
+                $.toast({
+                    heading: '成功',
+                    text: msg,
+                    showHideTransition: 'plain',
+                    position: 'top-center',
+                    icon: 'success'
+                })
+            };
+            //错误
+            this.errorTip = function (msg) {
+                $.toast({
+                    heading: '错误',
+                    text: msg,
+                    hideAfter: 3000,
+                    showHideTransition: 'plain',
+                    position: 'bottom-right',
+                    icon: 'error'
+                })
+            };
+            //提示
+            this.commentTip = function (msg) {
+                $.toast({
+                    heading: '提示',
+                    text: msg,
+                    showHideTransition: 'plain',
+                    position: 'bottom-right',
+                    icon: 'info'
+                })
+            };
+            //警告
+            this.warningTip = function (msg) {
+                $.toast({
+                    heading: '警告',
+                    text: msg,
+                    showHideTransition: 'plain',
+                    position: 'top-center',
+                    icon: 'bottom-right'
+                })
+            }
+
+        })
+        /**
+         * 流程主页的业务逻辑
+         * */
+        .controller("indexCtrl", function ($scope, $location) {
+            $location.path("/process-desc");//防止用户F5刷新时，路由没有重定向
+            $scope.liActiveFlag = 0;//默认选中第一项
+            $scope.toolbarClick = function (position) {//点击菜单的选择
+                $scope.liActiveFlag = position;
+            };
+        })
+        /**
+         * 流程demo的业务逻辑
+         */
+        .controller("processCtrl", function ($scope, $http, tipService) {
+            //是否显示进度条
+            $scope.progressShowFlag = false;
+            //用户数据表
+            $scope.userList = USER_TABLE_DATA;
+            //预定义选择的用户
+            $scope.employeeId = "001";
+            $scope.director1Id = "005";
+            $scope.director2Id = "006";
+            $scope.bossId = "008";
+            //用户id转化为用户名称
+            $scope.userId2Username = function () {
+                let userList = $scope.userList;
+                for (let i = 0; i < userList.length; i++) {
+                    if (userList[i].userId === $scope.employeeId) {
+                        return userList[i].username;
+                    }
+                }
+                return "";
+            };
+            //监听流程引擎服务的基本地址
+            let rootUrl = "http://localhost:8080";
+            $scope.$watch("processEngineServiceUrl", function (n, o) {
+                if (n !== undefined) {
+                    rootUrl = n;
+                }
+            });
+
+            //1.部署工作流模板
+            $scope.deployProcessModelJson = deployProcessModelJson;
+            $scope.deployProcessModelResult = "部署工作流模板结果";
+            $scope.deployProcessModelClick = function () {
+                $scope.progressShowFlag = true;
+                $http({
+                    method: "POST",
+                    url: rootUrl + "/process/deployProcessModel",
+                    headers: {'Content-Type': "application/json"},
+                    data: $scope.deployProcessModelJson,
+                    timeout: 15000
+                }).then(function (response) {
+                    $scope.progressShowFlag = false;
+                    let data = response.data;
+                    if (data.status === 200) {
+                        $scope.deployProcessModelFlag = "success";
+                        tipService.successTip("部署工作流模板成功");
+                        console.log("工作流模板id:" + data.data);
+                    } else {
+                        $scope.deployProcessModelFlag = "fail";
+                        tipService.errorTip(data.errorInfo);
+                    }
+                }, function (error) {
+                    $scope.deployProcessModelFlag = "fail";
+                    $scope.progressShowFlag = false;
+                    tipService.errorTip("网络链接异常");
+                });
+            };
+
+            //2.第三步:部署工作流(用户提交单据)
+            $scope.deployProcessClick = function () {
+                $scope.progressShowFlag = true;
+                $http({
+                    method: "POST",
+                    url: rootUrl + "/process/deployProcess",
+                    headers: {'Content-Type': "application/json"},
+                    data: $("#deployProcessJsonId").html(),
+                    timeout: 15000
+                }).then(function (response) {
+                    $scope.progressShowFlag = false;
+                    let data = response.data;
+                    if (data.status === 200) {
+                        $scope.deployProcessFlag = "success";
+                        tipService.successTip("部署工作流成功");
+                        console.log("工作流信息:" + data.data);
+                    } else {
+                        $scope.deployProcessFlag = "fail";
+                        tipService.errorTip(data.errorInfo);
+                    }
+                }, function (error) {
+                    $scope.deployProcessFlag = "fail";
+                    $scope.progressShowFlag = false;
+                    tipService.errorTip("网络链接异常");
+                });
+            };
+
+            //第四步:查询用户工作流列表
+            $scope.$watch("selectProcessEmployeeId", function (n, o) {
+                if (n !== undefined) {
+                    $scope.progressShowFlag = true;
+                    $http({
+                        method: "GET",
+                        url: rootUrl + "/process/userProcessList?userId=" + n,
+                        timeout: 15000
+                    }).then(function (response) {
+                        $scope.progressShowFlag = false;
+                        let data = response.data;
+                        if (data.status === 200) {
+                            // tipService.successTip("success");
+                            $scope.processList = data.data;
+                        } else {
+                            tipService.errorTip(data.errorInfo);
+                        }
+                    }, function (error) {
+                        $scope.progressShowFlag = false;
+                        tipService.errorTip("网络链接异常");
+                    });
+                }
+            });
+            //流程列表删除与查看事件
+            $scope.processItemDelegateClick = function (e, process, index) {
+                let $1 = $(e.delegationTarget);
+                //删除监听
+                if ($1.html() === "删除") {
+                    $scope.progressShowFlag = true;
+                    $http({
+                        method: "GET",
+                        url: rootUrl + "/process/deleteProcess?processInstanceId=" + process.id,
+                        timeout: 15000
+                    }).then(function (response) {
+                        $scope.progressShowFlag = false;
+                        tipService.successTip("删除成功");
+                        $scope.processList.splice(index, 1);
+                    }, function (error) {
+                        $scope.progressShowFlag = false;
+                        tipService.errorTip("网络链接异常");
+                    });
+                } else {
+                    $scope.processImgUrl = rootUrl + "/process/processDiagram?processInstanceId=" + process.id + "&" + Math.random();
+                }
+            };
+
+            //5.查询用户任务
+            $scope.$watch("selectTaskEmployeeId", function (n, o) {
+                if (n !== undefined) {
+                    $scope.progressShowFlag = true;
+                    $http({
+                        method: "GET",
+                        url: rootUrl + "/process/userTaskList?userId=" + n,
+                        timeout: 15000
+                    }).then(function (response) {
+                        $scope.progressShowFlag = false;
+                        let data = response.data;
+                        if (data.status === 200) {
+                            // tipService.successTip("success");
+                            $scope.taskList = data.data;
+                        } else {
+                            tipService.errorTip(data.errorInfo);
+                        }
+                    }, function (error) {
+                        $scope.progressShowFlag = false;
+                        tipService.errorTip("网络链接异常");
+                    });
+                }
+            });
+            //任务列表签核事件
+            $scope.taskItemDelegateClick = function (task, index) {
+                $scope.progressShowFlag = true;
+                $http({
+                    method: "POST",
+                    url: rootUrl + "/process/taskHandle",
+                    data: {
+                        processInstanceId: task.processInstanceEntity.id,
+                        taskId: task.id
+                    },
+                    timeout: 15000
+                }).then(function (response) {
+                    $scope.progressShowFlag = false;
+                    let data = response.data;
+                    if (data.status === 200) {
+                        tipService.successTip("删除成功");
+                        $scope.taskList.splice(index, 1)
+                    } else {
+                        tipService.errorTip(data.errorInfo);
+                    }
+                }, function (error) {
+                    $scope.progressShowFlag = false;
+                    tipService.errorTip("网络链接异常");
+                });
+            };
+
+        });
+
+</script>
